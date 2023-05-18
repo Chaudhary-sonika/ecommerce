@@ -1,0 +1,11 @@
+.homeDiv{
+    display: flex;
+    flex-direction: row;
+    margin: 2rem;
+}
+.aboutDiv{
+    border: 1px solid transparent;
+    background-color: #FFCC57;
+    width: 25rem;
+    padding: 1rem;
+}

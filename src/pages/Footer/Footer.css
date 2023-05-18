@@ -1,0 +1,28 @@
+.footerDiv{
+    background-color: #1A244D;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    
+    
+
+}
+.ulFooter{
+    list-style: none;
+     display: flex;
+     flex-direction:row;
+    justify-content: center;
+  
+}
+.footerIcon{
+   margin-bottom: -15px;
+}
+.iconFoot{
+    font-size: 25px;
+    padding-right: 2rem;
+    color: #FFCC57;
+}
+.paragraph-foot{
+    font-size: x-small;
+    color: white;
+   
+}
