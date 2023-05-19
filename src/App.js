@@ -8,6 +8,7 @@ import { Cart } from "./pages/Cart/Cart";
 import { Wishlist } from "./pages/Wishlist/Wishlist";
 import { Login } from "./pages/Login/Login";
 import { Footer } from "./pages/Footer/Footer";
+import { Landing } from "./pages/LandingPage/Landing";
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/landing" element={<Landing />} />
         <Route path="/mockman" element={<Mockman />} />
       </Routes>
       <Footer />

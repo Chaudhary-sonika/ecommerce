@@ -9,3 +9,27 @@
     width: 25rem;
     padding: 1rem;
 }
+/* .hero{
+    width: 300px;
+} */
+
+.imageCat{
+    width: 200px;
+}
+.catDiv{
+    width: 220px;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 2rem;
+}
+.catDiv:hover{
+    cursor:pointer;
+    background-color: #f1f5f9;
+    transform: scale(1.03);
+}
+.categoryBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

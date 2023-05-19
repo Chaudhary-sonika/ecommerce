@@ -1,0 +1,22 @@
+.HomeDiv{
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+    justify-content:start;
+    border: 1px solid transparent;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.priceDiv{
+    display: flex;
+    flex-direction: column;
+}
+.categoryDiv{
+    display: flex;
+    flex-direction: column;
+    
+}
+.ratingDiv{
+    display: flex;
+    flex-direction: column;
+}
