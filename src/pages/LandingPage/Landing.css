@@ -40,4 +40,18 @@
     color: #6b7280;
     font-size: small;
     margin-top: -8px;
+    text-align: left;
+    margin-left: 1rem;
+}
+.detailDiv{
+  display: flex;
+  justify-content: space-evenly;
+}
+.mrpPara{
+    font-size: small;
+    color: #6b7280;
+    text-decoration: line-through;
+}
+.pricePara{
+    font-size: 14px;
 }

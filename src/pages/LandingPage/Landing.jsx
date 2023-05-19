@@ -36,8 +36,10 @@ export const Landing =()=>{
                               <h4>{name}</h4>
                               <p className="catName">{category}</p>
                               <div className="detailDiv">
-                                <p className="pricePara">Price: ₹{price}</p>
-                                <p className="mrpPara">MRP: ₹{mrp}</p>
+                                 <div>
+                                  <p className="pricePara">Price: ₹{price}</p>
+                                  <p className="mrpPara">MRP: ₹{mrp}</p>
+                                 </div>
                                 <p className="ratingPara">Rating: {rating}</p>
                               </div>
                             </div>
