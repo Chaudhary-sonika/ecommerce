@@ -9,7 +9,12 @@
     background-color: #0f172a;
 }
 .heroText{
-    color: white;
+    color: #e5e7eb;
+    margin: auto;
+}
+#landingHedingTwo{
+    color: #0f172a;
+    font-family: sans-serif;
     
 }
 .landingDiv{
@@ -18,10 +23,14 @@
     justify-content: space-evenly;
 }
 .productImg{
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     /* border: 1px solid salmon; */
     border-radius: 4px;
+}
+.prodDiv{
+    width: 12.5rem;
+    height: 12.5rem;
 }
 .productDiv{
     width: 200px;

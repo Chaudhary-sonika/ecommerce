@@ -14,7 +14,8 @@
 .categoryDiv{
     display: flex;
     flex-direction: column;
-    
+    align-items: flex-start;
+    margin-left: 0.8rem;
 }
 .ratingDiv{
     display: flex;

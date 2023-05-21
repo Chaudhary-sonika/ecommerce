@@ -2,16 +2,48 @@
     display: flex;
     flex-direction: row;
     margin: 2rem;
+    margin-left: 10%;
 }
 .aboutDiv{
     border: 1px solid transparent;
     background-color: #FFCC57;
     width: 25rem;
     padding: 1rem;
+    
 }
-/* .hero{
-    width: 300px;
+/* .heroTwo{
+    margin-left: -1rem;
 } */
+.homePic{
+    width: 77rem;
+    height: 28rem;
+    position: relative;
+    
+}
+.homeText{
+ position: absolute;
+ top: 17rem ;
+ left: 37%;
+}
+.headingText{
+    color: #1A244D;
+}
+.btnCheck{
+    border: transparent;
+    padding: 0.3rem;
+    border-radius: 0.2rem;
+    
+}
+.btnCheck:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.catHeading{
+    color: #1A244D;
+    font-family: sans-serif;
+    padding: 1rem;
+}
 
 .imageCat{
     width: 200px;

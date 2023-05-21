@@ -21,18 +21,25 @@ export const Landing =()=>{
         <div>
             <div className="titleDiv">
                <img className="Hero" src="https://static0.pocketlintimages.com/wordpress/wp-content/uploads/130383-smart-home-news-feature-how-will-samsung-s-200m-smartthings-purchase-affect-your-house-image5-35ZMJprEi9.png" alt="HomePicture"/>
-                <h1 className="heroText">DigiSpace provides you exciting offers</h1>
+                <div className="heroText">
+                   <h1>DigiSpace provides you exciting offers</h1>
+                   <h2>Grab it now</h2>
+                </div>
+               
             </div> 
+            <h3 id="landingHedingTwo">All Products list here-</h3>
            <div className="landingDiv">
              <Filter/>
              <div>
-                <h4>All Products list here</h4>
+                
                 <div className="productLandingDiv">
                     {productData.map((item)=>{
                         const {_id, name, categoryName,category, rating, price, mrp, imageUrl} = item;
                         return(
                             <div key={_id} className="productDiv">
-                              <img className="productImg" src={imageUrl} alt="productImage"/> 
+                              <div className="prodDiv">
+                                <img className="productImg" src={imageUrl} alt="productImage"/>
+                                </div> 
                               <h4>{name}</h4>
                               <p className="catName">{category}</p>
                               <div className="detailDiv">
