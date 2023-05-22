@@ -3,15 +3,17 @@ import "./Home.css";
 import homespace from "../images/homespace2.jpg";
 
 import { useNavigate } from "react-router";
+import { useData } from "../../Contexts/contexts";
 
 export const Home=()=>{
+    const {dispatch} = useData();
     const [homeData, setHomeData] = useState([]);
     const fetchData = async()=>{
         try{
             const response = await fetch("/api/categories");
             const dataCat = await response.json();
             setHomeData( dataCat.categories);
-            console.log(dataCat);
+            // console.log(dataCat);
         }catch(e){
             console.error(e)
         }
@@ -19,6 +21,14 @@ export const Home=()=>{
   useEffect(()=>{
    fetchData();
   }, []);
+
+  const categoryHandler=(categoryName)=>{
+    dispatch({
+        type: "category",
+        payload: categoryName,
+    })
+    navigate("/landing")
+  }
   const navigate = useNavigate();
     return(
         <div>
@@ -34,7 +44,7 @@ export const Home=()=>{
           <h3 className="catHeading">Choose By Category-</h3>
           <div className="categoryBox">
            {homeData.map(({_id, categoryName, description, imageUrl})=>(
-                <div key={_id} className="catDiv">
+                <div key={_id} className="catDiv" onClick={()=>categoryHandler(categoryName)}>
                     <h3>{categoryName}</h3>
                     <img className="imageCat" src={imageUrl} alt="category"/>
                     <p>{description}</p>
