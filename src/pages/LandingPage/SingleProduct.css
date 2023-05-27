@@ -1,0 +1,54 @@
+
+.singleAppBody{
+    background-color: #f3f4f6;
+}
+.singleDiv{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+   padding: 1rem;
+}
+.singleProductDiv{
+    display: flex;
+    flex-direction: row;
+   justify-content:center;
+   /* align-items: center; */
+   /* background-color: white; */
+}
+.itemDiv{
+    width: 18rem;
+    background-color: white;
+    padding: 1.5rem;
+}
+.singleImg{
+    width: 18rem;
+    height: 25rem;
+}
+.singleItemDiv{
+    background-color: white;
+    padding: 1rem;
+    width: 20rem;
+    text-align: left;
+}
+.singleCatName{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.bestSellerDiv{
+    background-color: orange;
+    color: white;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    border-radius: 3px;
+}
+.singleMrpPara{
+    font-size: 14px;
+    text-decoration: line-through;
+    color: grey;
+}
+.singlePageBTN{
+    background-color: #1A244D;
+    color: white;
+    border: #1A244D;
+    padding: 4px;
+    border-radius: 4px;
+}

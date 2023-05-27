@@ -9,6 +9,7 @@ import { Wishlist } from "./pages/Wishlist/Wishlist";
 import { Login } from "./pages/Login/Login";
 import { Footer } from "./pages/Footer/Footer";
 import { Landing } from "./pages/LandingPage/Landing";
+import { SingleProduct } from "./pages/LandingPage/SingleProduct";
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/landing" element={<Landing />} />
         <Route path="/mockman" element={<Mockman />} />
+        <Route path="/products/:productId" element={<SingleProduct />} />
       </Routes>
       <Footer />
     </div>

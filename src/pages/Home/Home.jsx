@@ -3,10 +3,12 @@ import "./Home.css";
 import homespace from "../images/homespace2.jpg";
 
 import { useNavigate } from "react-router";
-import { useData } from "../../Contexts/contexts";
+
+import { useFilter } from "../../Contexts/filterContext";
 
 export const Home=()=>{
-    const {dispatch} = useData();
+    
+    const {filterDispatch} = useFilter();
     const [homeData, setHomeData] = useState([]);
     const fetchData = async()=>{
         try{
@@ -23,7 +25,7 @@ export const Home=()=>{
   }, []);
 
   const categoryHandler=(categoryName)=>{
-    dispatch({
+    filterDispatch({
         type: "category",
         payload: categoryName,
     })

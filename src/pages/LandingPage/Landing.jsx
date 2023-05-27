@@ -1,22 +1,12 @@
 import "./Landing.css";
 import { Filter } from "./Filter"
-import { useState, useEffect } from "react";
+
+import { useFilter } from "../../Contexts/filterContext";
+import { useNavigate } from "react-router";
 
 export const Landing =()=>{
-    const [productData, setProductData] = useState([]);
-    const fetchData = async()=>{
-        try{
-            const response = await fetch("/api/products");
-            const dataProd = await response.json();
-            setProductData( dataProd.products);
-            console.log(dataProd);
-        }catch(e){
-            console.error(e)
-        }
-       }
-  useEffect(()=>{
-   fetchData();
-  }, []);   
+    const {FinalData} = useFilter();  
+    const navigate = useNavigate(); 
     return(
         <div>
             <div className="titleDiv">
@@ -33,21 +23,24 @@ export const Landing =()=>{
              <div>
                 
                 <div className="productLandingDiv">
-                    {productData.map((item)=>{
-                        const {_id, name, categoryName,category, rating, price, mrp, imageUrl} = item;
+                    {FinalData.map((item)=>{
+                        const {_id, name, category, rating, price, mrp, imageUrl} = item;
                         return(
-                            <div key={_id} className="productDiv">
+                            <div key={_id} className="productDiv" onClick={()=>navigate(`/products/${_id}`)}>
                               <div className="prodDiv">
                                 <img className="productImg" src={imageUrl} alt="productImage"/>
-                                </div> 
-                              <h4>{name}</h4>
+                              </div> 
+                              <div className="allInfoDiv">
+                              <h5>{name}</h5>
                               <p className="catName">{category}</p>
                               <div className="detailDiv">
                                  <div>
                                   <p className="pricePara">Price: ₹{price}</p>
                                   <p className="mrpPara">MRP: ₹{mrp}</p>
                                  </div>
-                                <p className="ratingPara">Rating: {rating}</p>
+                                <p className="ratingPara">{rating}⭐</p>
+                              </div>
+                              <button>Add to Cart</button>
                               </div>
                             </div>
                         )

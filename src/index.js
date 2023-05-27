@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { DataProvider } from "./Contexts/contexts";
+import { FilterProvider } from "./Contexts/filterContext";
 
 // Call make Server
 makeServer();
@@ -13,7 +14,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <DataProvider>
-        <App />
+        <FilterProvider>
+          <App />
+        </FilterProvider>
       </DataProvider>
     </BrowserRouter>
   </React.StrictMode>,

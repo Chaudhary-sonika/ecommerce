@@ -7,7 +7,7 @@ import { v4 as uuid } from "uuid";
 
 export const products = [
   {
-    _id: uuid(),
+    _id: 1,
     name: "Voltas 1.4 Ton 3 Star Inverter Split AC",
     categoryName: "Home Appliances",
     category: "AC",
@@ -26,12 +26,12 @@ export const products = [
   },
 
   {
-    _id: uuid(),
+    _id: 2,
     name: "LG 185 L 5 Star Inverter Direct-Cool Single Door Refrigerator",
     categoryName: "Home Appliances",
     category: "Refrigerator",
     isBestSeller: true,
-    rating: 4.2,
+    rating: 3.9,
     mrp: 22199,
     price: 17590,
     imageUrl: "https://m.media-amazon.com/images/I/61T4yGA9-oL._SL1500_.jpg",
@@ -44,12 +44,12 @@ export const products = [
     ],
   },
   {
-    _id: uuid(),
+    _id: 3,
     name: "Zebronics Zeb-Blitz HeadPhone",
     categoryName: "Computer & Accessories",
     category: "Headphone",
     isBestSeller: false,
-    rating: 4.2,
+    rating: 2.8,
     mrp: 5999,
     price: 2399,
     imageUrl: "https://m.media-amazon.com/images/I/61Wyl9B6XxL._SL1500_.jpg",
@@ -61,7 +61,7 @@ export const products = [
     ],
   },
   {
-    _id: uuid(),
+    _id: 4,
     name: "Samsung 845 L Inverter Frost Free Side-by-Side Refrigerator",
     categoryName: "Home Appliances",
     category: "Refrigerator",
@@ -78,7 +78,7 @@ export const products = [
   },
 
   {
-    _id: uuid(),
+    _id: 5,
     name: "Samsung 32 L Convection Microwave Oven",
     categoryName: "Home Appliances",
     category: "Microwave",
@@ -95,7 +95,7 @@ export const products = [
     ],
   },
   {
-    _id: uuid(),
+    _id: 6,
     name: "LG 7 Kg 5 Star Semi-Automatic Top Loading Washing Machine",
     categoryName: "Home Appliances",
     category: "Washing Machine",
@@ -112,7 +112,7 @@ export const products = [
     ],
   },
   {
-    _id: uuid(),
+    _id: 7,
     name: "Philips Air Purifier with HEPA Filter Type - AC121720",
     categoryName: "Home Appliances",
     category: "Air Purifier",
@@ -131,7 +131,7 @@ export const products = [
     ],
   },
   {
-    _id: uuid(),
+    _id: 8,
     name: "Bosch 7 kg 5 Star Inverter Touch Control Fully Automatic",
     categoryName: "Home Appliances",
     category: "Washing Machine",
@@ -150,7 +150,7 @@ export const products = [
   },
 
   {
-    _id: uuid(),
+    _id: 9,
     name: "Sony Bravia 164 cm (65 inches) 4K Ultra HD",
     categoryName: "Home Appliances",
     category: "LED/TV",
@@ -170,12 +170,12 @@ export const products = [
   },
 
   {
-    _id: uuid(),
+    _id: 10,
     name: "Honeywell Air Touch P2 Indoor Air Purifier",
     categoryName: "Home Appliances",
     category: "Air Purifier",
     isBestSeller: true,
-    rating: 4.0,
+    rating: 3.5,
     mrp: 23299,
     price: 17499,
     imageUrl: "https://m.media-amazon.com/images/I/51qQMA5x4AL._SL1000_.jpg",
@@ -189,7 +189,7 @@ export const products = [
     ],
   },
   {
-    _id: uuid(),
+    _id: 11,
     name: "Samsung Galaxy S20 FE 5G",
     categoryName: "Smart Phone & Smart Watches",
     category: "Mobile",
@@ -210,7 +210,7 @@ export const products = [
     ],
   },
   {
-    _id: uuid(),
+    _id: 12,
     name: "ASUS TUF Gaming A15 Laptop",
     categoryName: "Computer & Accessories",
     category: "Laptop",
@@ -230,7 +230,7 @@ export const products = [
     ],
   },
   {
-    _id: uuid(),
+    _id: 13,
     name: "Redmi Note 12 5G Frosted Green",
     categoryName: "Smart Phone & Smart Watches",
     category: "Mobile",
@@ -251,7 +251,7 @@ export const products = [
     ],
   },
   {
-    _id: uuid(),
+    _id: 14,
     name: "Garmin Venu Sq GPS Smart watch",
     categoryName: "Smart Phone & Smart Watches",
     category: "Smart Watch",
@@ -269,7 +269,7 @@ export const products = [
     ],
   },
   {
-    _id: uuid(),
+    _id: 15,
     name: "Samsung Galaxy Watch5 Bluetooth",
     categoryName: "Smart Phone & Smart Watches",
     category: "Smart Watch",
@@ -288,7 +288,7 @@ export const products = [
   },
 
   {
-    _id: uuid(),
+    _id: 16,
     name: "HP Victus Gaming Latest AMD Laptop",
     categoryName: "Computer & Accessories",
     category: "Laptop",
@@ -308,7 +308,7 @@ export const products = [
     ],
   },
   {
-    _id: uuid(),
+    _id: 17,
     name: "Sony INZONE H9",
     categoryName: "Computer & Accessories",
     category: "Headphone",
@@ -324,7 +324,7 @@ export const products = [
   },
 
   {
-    _id: uuid(),
+    _id: 18,
     name: "Lloyd 2.0 Ton 5 Star Inverter Split AC",
     categoryName: "Home Appliances",
     category: "AC",
@@ -343,7 +343,7 @@ export const products = [
     ],
   },
   {
-    _id: uuid(),
+    _id: 19,
     name: "IFB 30 L Convection Microwave Oven",
     categoryName: "Home Appliances",
     category: "Microwave",
@@ -360,7 +360,7 @@ export const products = [
     ],
   },
   {
-    _id: uuid(),
+    _id: 20,
     name: "MI 80 cm (32 inches) 5A Series HD",
     categoryName: "Home Appliances",
     category: "LED/TV",

@@ -16,13 +16,13 @@
 } */
 .homePic{
     width: 77rem;
-    height: 28rem;
+    height: 30rem;
     position: relative;
     
 }
 .homeText{
  position: absolute;
- top: 17rem ;
+ top: 19rem ;
  left: 37%;
 }
 .headingText{

@@ -5,9 +5,8 @@ const DataContext = createContext(null);
 
 
 export const DataProvider = ({children})=>{
-    
-    // const [productData, setProductData] = useState([]);
-    const [state, dispatch] = useReducer(DataReducer, {AllProduct:[]});
+  const [productData, setProductData]= useState([]);  
+  const [state, dispatch] = useReducer(DataReducer,{AllProduct:[]} );
     const fetchData = async()=>{
         try{
             const response = await fetch("/api/products");
@@ -16,7 +15,7 @@ export const DataProvider = ({children})=>{
                 type: "initial_Product",
                 payload: dataProd?.products,
               });
-            // setProductData( dataProd.products);
+            setProductData( dataProd.products);
             // console.log(dataProd);
         }catch(e){
             console.error(e)
@@ -26,9 +25,9 @@ export const DataProvider = ({children})=>{
    fetchData();
   }, []); 
   
-
+   
     return(
-        <DataContext.Provider value={{state, dispatch}}>
+        <DataContext.Provider value={{state, dispatch, productData}}>
             {children}
         </DataContext.Provider>
 
