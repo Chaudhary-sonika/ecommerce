@@ -1,30 +1,32 @@
 import "./SingleProduct.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { useData } from "../../Contexts/contexts"; 
+ 
 
 export const SingleProduct = ()=>{
     const { productId } = useParams();
-    const {productData} = useData();
-    // const [productDetail, setProductDetail] = useState([]);
     
-    // const fetchData = async()=>{
-    //     try{
-    //          const response = await fetch("/api/products");
-    //          const productInfo = await response.json();
-    //          setProductDetail(productInfo?.products);
+    const [productDetail, setProductDetail] = useState([]);
+    
+    const fetchData = async()=>{
+        try{
+             const response = await fetch(`/api/products/${productId}`);
+             
+             const productInfo = await response.json();
+            //  console.log(productInfo, "Shashi", productInfo?.products);
+             setProductDetail(productInfo?.product);
              
             
-    //     }catch(e){
-    //         console.error(e);
-    //     }
-    // }
-    const singleItem = productData.find((item)=>item._id === Number(productId));
-    console.log(singleItem);
-    const {_id, name, category, rating, price, mrp, imageUrl, details, isBestSeller} = singleItem;
-    // useEffect(()=>{
-    //     fetchData();
-    // }, []);
+        }catch(e){
+            console.error(e);
+        }
+    }
+    // const singleItem = productData.find((item)=>item._id === Number(productId));
+    // console.log(singleItem);
+    const {_id, name, category, rating, price, mrp, imageUrl, details, isBestSeller} = productDetail;
+    useEffect(()=>{
+        fetchData();
+    }, []);
     
     return(
         <div className="singleAppBody">
@@ -48,7 +50,7 @@ export const SingleProduct = ()=>{
                                 <p className="singleRatingPara">Rating: {rating}⭐</p>
                                 <div>
                                     <h4>Description:-</h4>
-                                    {details.map((item)=>(
+                                    {details?.map((item)=>(
                                         <li className="listDiv">{item}</li>
                                     ))}
                                 </div>

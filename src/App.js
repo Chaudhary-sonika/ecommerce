@@ -10,14 +10,29 @@ import { Login } from "./pages/Login/Login";
 import { Footer } from "./pages/Footer/Footer";
 import { Landing } from "./pages/LandingPage/Landing";
 import { SingleProduct } from "./pages/LandingPage/SingleProduct";
+import { RequireAuth } from "./Component/RequireAuth";
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/wishlist" element={<Wishlist />} />
+        <Route
+          path="/cart"
+          element={
+            <RequireAuth>
+              <Cart />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/wishlist"
+          element={
+            <RequireAuth>
+              <Wishlist />
+            </RequireAuth>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/landing" element={<Landing />} />
         <Route path="/mockman" element={<Mockman />} />

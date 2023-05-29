@@ -6,7 +6,7 @@ import App from "./App";
 import { makeServer } from "./server";
 import { DataProvider } from "./Contexts/contexts";
 import { FilterProvider } from "./Contexts/filterContext";
-
+import { AuthProvider } from "./Contexts/AuthContex";
 // Call make Server
 makeServer();
 
@@ -15,7 +15,9 @@ ReactDOM.render(
     <BrowserRouter>
       <DataProvider>
         <FilterProvider>
-          <App />
+          <AuthProvider>
+            <App />
+          </AuthProvider>
         </FilterProvider>
       </DataProvider>
     </BrowserRouter>

@@ -5,6 +5,7 @@ const DataContext = createContext(null);
 
 
 export const DataProvider = ({children})=>{
+    
   const [productData, setProductData]= useState([]);  
   const [state, dispatch] = useReducer(DataReducer,{AllProduct:[]} );
     const fetchData = async()=>{
