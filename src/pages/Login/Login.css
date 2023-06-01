@@ -1,0 +1,13 @@
+
+.loginHome{
+    min-height: 74dvh;
+}
+.loginDiv{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    height: 30dvh;
+    justify-content: space-evenly;
+}

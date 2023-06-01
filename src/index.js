@@ -7,6 +7,7 @@ import { makeServer } from "./server";
 import { DataProvider } from "./Contexts/contexts";
 import { FilterProvider } from "./Contexts/filterContext";
 import { AuthProvider } from "./Contexts/AuthContex";
+import { CartProvider } from "./Contexts/CartContext";
 // Call make Server
 makeServer();
 
@@ -16,7 +17,9 @@ ReactDOM.render(
       <DataProvider>
         <FilterProvider>
           <AuthProvider>
-            <App />
+            <CartProvider>
+              <App />
+            </CartProvider>
           </AuthProvider>
         </FilterProvider>
       </DataProvider>

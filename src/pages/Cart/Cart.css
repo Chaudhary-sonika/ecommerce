@@ -1,0 +1,18 @@
+.CartProdDiv{
+    display: flex;
+    flex-direction: column;
+    
+}
+.CartHeading{
+    display: flex;
+    flex-direction: row;
+}
+.CartProduct{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.CartImageProd{
+    width: 12rem;
+}

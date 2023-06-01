@@ -11,10 +11,13 @@ import { Footer } from "./pages/Footer/Footer";
 import { Landing } from "./pages/LandingPage/Landing";
 import { SingleProduct } from "./pages/LandingPage/SingleProduct";
 import { RequireAuth } from "./Component/RequireAuth";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className="App">
       <Header />
+      <ToastContainer position="top-right" autoClose={2000} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route

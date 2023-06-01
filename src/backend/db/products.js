@@ -15,6 +15,7 @@ export const products = [
     rating: 4,
     mrp: 60000,
     price: 31000,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/41LlSc9YsnL._SL1500_.jpg",
     details: [
       "Split AC with inverter compressor",
@@ -34,6 +35,7 @@ export const products = [
     rating: 3.9,
     mrp: 22199,
     price: 17590,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/61T4yGA9-oL._SL1500_.jpg",
     details: [
       "Direct Cool Refrigerator: Economical and stylish ",
@@ -52,6 +54,7 @@ export const products = [
     rating: 2.8,
     mrp: 5999,
     price: 2399,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/61Wyl9B6XxL._SL1500_.jpg",
     details: [
       "Experience DOLBY ATMOS with ZEB-BLITZ USB gaming headphones",
@@ -69,6 +72,7 @@ export const products = [
     rating: 4.1,
     mrp: 139990,
     price: 111700,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/81N7RszyBcL._SL1500_.jpg",
     details: [
       "Refrigerators: Premium refrigerators with auto-defrost function to prevent ice build-up ",
@@ -86,6 +90,7 @@ export const products = [
     rating: 3.5,
     mrp: 32900,
     price: 22250,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/41h48n+z37L._SL1100_.jpg",
     details: [
       "32L Capacity: Suitable for large families ",
@@ -103,6 +108,7 @@ export const products = [
     rating: 4.5,
     mrp: 16050,
     price: 11910,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/61xtcXJfYaL._SL1500_.jpg",
     details: [
       "Semi-automatic washing Machine: Economical, Low water and energy consumption",
@@ -120,6 +126,7 @@ export const products = [
     rating: 4.3,
     mrp: 13995,
     price: 13190,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/71bbq8-YBVL._SL1500_.jpg",
     details: [
       "Product Dimensions: 38.8D x 62.2W x 27.2H Centimeters",
@@ -139,6 +146,7 @@ export const products = [
     rating: 4.4,
     mrp: 48590,
     price: 31990,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/71A2wRV96mL._SL1500_.jpg",
     details: [
       " Front Loading Washing Machine with In - built Heater",
@@ -158,6 +166,7 @@ export const products = [
     rating: 4.7,
     mrp: 139900,
     price: 92990,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/81MRU+3RJLL._SL1500_.jpg",
     details: [
       "Resolution: 4K Ultra HD (3840 x 2160)",
@@ -178,6 +187,7 @@ export const products = [
     rating: 3.5,
     mrp: 23299,
     price: 17499,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/51qQMA5x4AL._SL1000_.jpg",
     details: [
       "Product Dimensions: 26D x 26.3W x 52.4H Centimeters",
@@ -197,6 +207,7 @@ export const products = [
     rating: 4.2,
     mrp: 34999,
     price: 74999,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/812yohjGZ2L._SL1500_.jpg",
     details: [
       "Processor: Qualcomm Snapdragon 865 Octa-Core processor",
@@ -218,6 +229,7 @@ export const products = [
     rating: 4.3,
     mrp: 71990,
     price: 59990,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/91zVSkGGZbS._SL1500_.jpg",
     details: [
       "Processor: AMD Ryzen 5 4600H Mobile Processor",
@@ -238,6 +250,7 @@ export const products = [
     rating: 3.8,
     mrp: 17999,
     price: 19999,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/81sTK4zipDL._SL1500_.jpg",
     details: [
       "Processor: Snapdragon 4 Gen1 6nm Octa-core 5G processor",
@@ -259,6 +272,7 @@ export const products = [
     rating: 4.4,
     mrp: 20990,
     price: 17190,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/71ILpOf86pS._SL1500_.jpg",
     details: [
       "Screen Size: 1.3 Inches",
@@ -277,6 +291,7 @@ export const products = [
     rating: 4.2,
     mrp: 33999,
     price: 30999,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/61O5Xjb9uEL._SL1500_.jpg",
     details: [
       "Screen Size: 1.73 Inches",
@@ -296,6 +311,7 @@ export const products = [
     rating: 4.3,
     mrp: 71343,
     price: 55990,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/81wJJj6jLfL._SL1500_.jpg",
     details: [
       "Processor: 6-core AMD Ryzen 5 5600H mobile processor",
@@ -316,6 +332,7 @@ export const products = [
     rating: 4.3,
     mrp: 27990,
     price: 19690,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/61m35lRdcxL._SL1500_.jpg",
     details: [
       "Dual Sensor Noise Canceling Technology keeps out surrounding noise",
@@ -332,6 +349,7 @@ export const products = [
     rating: 3.9,
     mrp: 85000,
     price: 53500,
+    quantity: 0,
     imageUrl:
       "https://m.media-amazon.com/images/I/31IXlxIPsOL._AC_UY327_QL65_.jpg",
     details: [
@@ -351,6 +369,7 @@ export const products = [
     rating: 4.3,
     mrp: 19390,
     price: 14420,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/71IWpC2j2kL._SL1500_.jpg",
     details: [
       "30L Capacity: Suitable for large families",
@@ -368,6 +387,7 @@ export const products = [
     rating: 4.4,
     mrp: 48590,
     price: 31990,
+    quantity: 0,
     imageUrl: "https://m.media-amazon.com/images/I/81tD7OZ0RXL._SL1500_.jpg",
     details: [
       "Resolution : HD Ready (1366 x 768)",

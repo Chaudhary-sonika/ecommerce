@@ -3,10 +3,12 @@ import { Filter } from "./Filter"
 
 import { useFilter } from "../../Contexts/filterContext";
 import { useNavigate } from "react-router";
+import { useCart } from "../../Contexts/CartContext";
 
 export const Landing =()=>{
     const {FinalData} = useFilter();  
     const navigate = useNavigate(); 
+    const {AddToCart}  = useCart();
     return(
         <div>
             <div className="titleDiv">
@@ -26,7 +28,7 @@ export const Landing =()=>{
                     {FinalData.map((item)=>{
                         const {_id, name, category, rating, price, mrp, imageUrl} = item;
                         return(
-                            <div key={_id} className="productDiv" onClick={()=>navigate(`/products/${_id}`)}>
+                          <div key={_id} className="productDiv" onClick={()=>navigate(`/products/${_id}`)}>
                               <div className="prodDiv">
                                 <img className="productImg" src={imageUrl} alt="productImage"/>
                               </div> 
@@ -40,7 +42,7 @@ export const Landing =()=>{
                                  </div>
                                 <p className="ratingPara">{rating}⭐</p>
                               </div>
-                              <button>Add to Cart</button>
+                              <button onClick={()=>AddToCart(item)}>Add to Cart</button>
                               </div>
                             </div>
                         )
