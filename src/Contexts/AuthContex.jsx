@@ -1,12 +1,21 @@
 import { createContext, useContext, useReducer, useState } from "react";
 import { AuthReducer } from "../reducer/AuthReducer";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({children})=>{
+    const location = useLocation();
+    const [userCredentials, setUserCredentials] = useState({
+        firstName:"",
+        lastName: "",
+        email:"",
+        password: "",
+        confirmPassword: "",
+    });
     const AuthInitial = {
         isLoggedIn: false,
         User:{},
@@ -25,16 +34,35 @@ export const AuthProvider = ({children})=>{
                 authDispatch({type: "setLogin", payload: true});
                 authDispatch({type: "setUser", payload: data?.foundUser});
                 authDispatch({type:"setToken", payload:data?.encodedToken});
-                // navigate("/landing");
+                navigate(location?.state?.from?.pathname || "/landing");
                 localStorage.setItem("token", data?.encodedToken);
+                // toast.success("Logged In!");
             }
         } catch(e){
             console.error(e);
         }
     }
+    const userSignUp = async(signUpData)=>{
+        try{
+       const {data, status} = await axios({
+        method: "POST",
+        data: signUpData,
+        url: "/api/auth/signup",
+       });
+       if(status===201){
+        authDispatch({type: "setUser", payload:  data?.createdUser});
+        authDispatch({type: "setToken", payload: data?.encodedToken});
+        navigate(location?.state?.from?.pathname || "/landing");
+        localStorage.setItem("token", data?.encodedToken);
+        toast.success("You successfully Signed Up!");
+       }
+        }catch(e){
+            console.error(e);
+        }
+    }
     return(
         <>
-        <AuthContext.Provider value={{authState, authDispatch, userLogin}}>
+        <AuthContext.Provider value={{authState, authDispatch, userLogin, userSignUp}}>
             {children}
         </AuthContext.Provider>
         </>

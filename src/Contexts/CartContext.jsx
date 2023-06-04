@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
+import { toast } from "react-toastify";
 
 
 const CartContext = createContext(null);
@@ -7,8 +8,7 @@ export const CartProvider =({children})=>{
     const [cartItem, setCartItem] = useState([]);
     const token = localStorage.getItem("token");
     
-//  const [cartState, cartDispatch] = useReducer(CartReducer, {})
-    const cartProductDetails = cartItem.reduce((acc, curr)=>({quantity: acc.quantity + Number(curr.qty), totalPrice: acc.totalPrice+ Number(curr.price), totalMRP: acc.totalMRP + Number(curr.mrp)}), {quantity:0, totalPrice:0, totalMRP:0})
+    const cartProductDetails = cartItem.reduce((acc, curr)=>({quantity: acc.quantity + Number(curr.qty), totalPrice: acc.totalPrice+ Number(curr.price) *  Number(curr.qty), totalMRP: acc.totalMRP + Number(curr.mrp) *  Number(curr.qty)}), {quantity:0, totalPrice:0, totalMRP:0})
 
     const fetchCartData = async()=>{
         try{
@@ -35,6 +35,7 @@ export const CartProvider =({children})=>{
             });
             if(status===201){
                 setCartItem(data?.cart);
+                toast.success("Added to Cart");
             }
         }catch(e){
             console.error(e);
@@ -44,12 +45,13 @@ export const CartProvider =({children})=>{
       try{
         const {data, status} = await axios({
             method: "DELETE",
-            url: `/api/user/cart/:${itemId}`,
+            url: `/api/user/cart/${itemId}`,
             headers: { authorization: token },
         });
         if(status===200){
             setCartItem(data?.cart);
-            console.log(data.cart, "remove");
+            toast.success("Removed from the Cart");
+            // console.log(data.cart, "remove");
         }
       }catch(e){
         console.error(e);
@@ -60,7 +62,7 @@ export const CartProvider =({children})=>{
             const {data, status} = await axios({
                 method: "POST",
                 data:  { action: { type: updateType } },
-                url: `/api/user/cart/:${itemId}`,
+                url: `/api/user/cart/${itemId}`,
                 headers: {authorization: token},
             });
             if(status===200){

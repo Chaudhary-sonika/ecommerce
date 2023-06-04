@@ -4,11 +4,15 @@ import { Filter } from "./Filter"
 import { useFilter } from "../../Contexts/filterContext";
 import { useNavigate } from "react-router";
 import { useCart } from "../../Contexts/CartContext";
+import { useWishlist } from "../../Contexts/WishlistContext";
+import { toast } from "react-toastify";
 
 export const Landing =()=>{
     const {FinalData} = useFilter();  
     const navigate = useNavigate(); 
-    const {AddToCart}  = useCart();
+    const {AddToCart, cartItem}  = useCart();
+    const {AddToWishlist, wishlistItem} = useWishlist();
+    
     return(
         <div>
             <div className="titleDiv">
@@ -27,10 +31,12 @@ export const Landing =()=>{
                 <div className="productLandingDiv">
                     {FinalData.map((item)=>{
                         const {_id, name, category, rating, price, mrp, imageUrl} = item;
+                        const isWishlisted = wishlistItem.find((arr)=>arr._id===_id );
+                        const isItemInCart = cartItem.find((arr)=>arr._id===_id);
                         return(
-                          <div key={_id} className="productDiv" onClick={()=>navigate(`/products/${_id}`)}>
-                              <div className="prodDiv">
-                                <img className="productImg" src={imageUrl} alt="productImage"/>
+                          <div key={_id} className="productDiv" >
+                              <div className="prodDiv" onClick={()=>navigate(`/products/${_id}`)}>
+                                <img className="productImg" src={imageUrl} alt="productImage" />
                               </div> 
                               <div className="allInfoDiv">
                               <h5>{name}</h5>
@@ -42,7 +48,8 @@ export const Landing =()=>{
                                  </div>
                                 <p className="ratingPara">{rating}⭐</p>
                               </div>
-                              <button onClick={()=>AddToCart(item)}>Add to Cart</button>
+                              {isItemInCart?<button className="landingBtn" onClick={()=>navigate("/cart")}>Go to Cart</button>:<button className="landingBtn" onClick={()=>AddToCart(item)}>Add to Cart</button>}
+                              <button className="landingBtn" onClick={()=>AddToWishlist(item)}>{isWishlisted?"Wishlisted": "Add To Wishlist"}</button>
                               </div>
                             </div>
                         )

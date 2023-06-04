@@ -78,14 +78,16 @@
     font-size: 14px;
     margin-top: -0.5rem;
 }
-button{
-    background-color: #1A244D;
+.landingBtn{
+    background-color:#1A244D;
     color: white;
     border: #1A244D;
     padding: 3px;
     border-radius: 4px;
+    margin-bottom: 3px;
 }
 button:hover{
-    background-color: #3b82f6;
+    background-color: #1e3a8a;
     cursor: pointer;
+    color: white;
 }

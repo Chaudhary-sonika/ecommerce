@@ -1,18 +1,52 @@
-.CartProdDiv{
-    display: flex;
-    flex-direction: column;
-    
-}
-.CartHeading{
+.cartMainDiv{
     display: flex;
     flex-direction: row;
+    justify-content:space-evenly;
 }
 .CartProduct{
-    
+    box-shadow: 0 0 5px;
+    border-radius: 0.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 1rem;
+    max-width: 30rem;
+    margin-left: 2rem;
+}
+.cartProdDetail{
+display: flex;
+flex-direction: column;
+align-items: start;
 }
 .CartImageProd{
-    width: 12rem;
+    width: 10rem;
+}
+.cartProductRemove{
+    display: flex;
+    flex-direction: row;
+}
+.cartQty{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.qtyBtn{
+    margin: 1rem; 
+    border: transparent;
+    border-radius: 3px;  
+}
+.removeBtn{
+    margin: 1rem;
+    border: transparent;
+    border-radius: 3px;
+}
+.cartProdName{
+    width: 16rem;
+    text-align: left;
+}
+.priceCardMainDiv{
+    box-shadow: 0 0 4px;
+    margin-left: 4rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
 }

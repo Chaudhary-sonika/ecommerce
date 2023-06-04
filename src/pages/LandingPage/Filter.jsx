@@ -5,8 +5,9 @@ export const Filter = ()=>{
   const {filterDispatch, filterState} = useFilter();
     return(
         <div>
-          
+          <h2>Filters:</h2>
         <div className="HomeDiv">
+          <button>Clear</button>
           <div className="priceDiv">
             <h3>PRICE</h3>
             <label><input type="radio" name="sort" onChange={()=>filterDispatch({type:"filterByPrice", payload:"highToLow"})}/>High to Low</label>

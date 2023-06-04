@@ -8,6 +8,37 @@
     width: 20rem;
     margin: auto;
     margin-bottom: 2rem;
-    height: 30dvh;
+    height: 35dvh;
     justify-content: space-evenly;
+}
+.signupBtn{
+    font-weight: 600;
+    color: #2563eb;
+}
+.signupBtn:hover{
+    cursor: pointer;
+}
+.signUpHome{
+    min-height: 28.5rem;
+}
+.signUpDiv{
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+    margin: auto;
+    box-shadow: 0 0 5px;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+.signPageBtn{
+    margin-top: 1.5rem;
+}
+.signUpDiv label{
+    margin-top: 0.5rem;
+}
+.loginHome input{
+    margin-bottom: 1rem;
+}
+.loginHome button{
+    margin-bottom: 1rem;
 }

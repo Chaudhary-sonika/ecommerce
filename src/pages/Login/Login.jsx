@@ -18,7 +18,7 @@ export const Login = ()=>{
         setUserCred(testUserData);
         userLogin(testUserData);
         toast.success("You are Logged In!");
-        navigate("/landing");
+        // navigate("/landing");
      } 
     return(
         <>
@@ -26,16 +26,15 @@ export const Login = ()=>{
            <h4>Get Access To Your personalised Cart, Wishlist And Orders</h4>
            <h1>{authState.isLoggedIn?"You are Signed In" :"Sign In"}</h1>
            { authState.isLoggedIn? "Welcome to DigiSpace! You Logged in as a guest": <div className="loginDiv">
-            <label>Email:
-                <input/>
-            </label>
-            <label>Password:
-                <input/>
-            </label>
+            <label>Email: </label>
+            <input placeholder="Enter your email"/>
+            <label>Password: </label>
+            <input placeholder="Enter your password"/>
             <button>Sign In</button>
             <button onClick={testUserHandler}>Test User</button>
-            <p>Don't have an account? Sign Up</p>
-           </div>}
+            <p>Don't have an account? <span className="signupBtn" onClick={()=>navigate("/signup")}>Sign Up</span> </p>
+           </div>
+           }
         </div>
         </>
     )

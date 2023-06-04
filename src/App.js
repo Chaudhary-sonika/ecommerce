@@ -13,6 +13,7 @@ import { SingleProduct } from "./pages/LandingPage/SingleProduct";
 import { RequireAuth } from "./Component/RequireAuth";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { SignUp } from "./pages/Login/SignUp";
 function App() {
   return (
     <div className="App">
@@ -40,6 +41,7 @@ function App() {
         <Route path="/landing" element={<Landing />} />
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/products/:productId" element={<SingleProduct />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
       <Footer />
     </div>
