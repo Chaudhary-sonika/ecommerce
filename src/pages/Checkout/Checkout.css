@@ -1,0 +1,39 @@
+
+.checkoutMainDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.order_detailCheck{
+    max-width: 15rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+}
+.title_checkDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.item_checkDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+}
+.price_checkDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.mrp_checkDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.total_checkDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

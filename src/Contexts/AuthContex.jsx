@@ -60,9 +60,16 @@ export const AuthProvider = ({children})=>{
             console.error(e);
         }
     }
+    const userLogout = () => {
+        authDispatch({type: "setLogin", payload: false});
+        authDispatch({ type: "setUser", payload: {} });
+        authDispatch({type: "setToken", payload:""});
+        localStorage.removeItem("data");
+        toast.warning("You successfully logout from the App!");
+      };
     return(
         <>
-        <AuthContext.Provider value={{authState, authDispatch, userLogin, userSignUp}}>
+        <AuthContext.Provider value={{authState, authDispatch, userLogin, userSignUp, userCredentials, setUserCredentials, userLogout}}>
             {children}
         </AuthContext.Provider>
         </>

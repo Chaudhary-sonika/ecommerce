@@ -3,7 +3,7 @@
 export const FilterReducer = (filterState, action)=>{
   switch (action.type){
     case "category":
-        console.log(action.payload);
+        
         return filterState.category.includes(action.payload) ? {...filterState, category:[...filterState.category].filter((item)=>item!==action.payload),}:{...filterState, category:[...filterState.category, action.payload] }
        
      case "filterByCategory":
@@ -17,6 +17,11 @@ export const FilterReducer = (filterState, action)=>{
 
      case "ratingFilter":
         return {...filterState, rating:action.payload};   
-        
+     case "clearFilter":
+        //  console.log(action.type);
+        return { category: [], productByCategory: [], sort: "", rating: 1, price: 500};
+      
+      default:
+      return filterState; 
   }
-}
+};

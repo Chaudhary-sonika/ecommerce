@@ -1,6 +1,12 @@
 import { NavLink } from "react-router-dom";
 import "./Header.css";
+import { useCart } from "../../Contexts/CartContext";
+import { useWishlist } from "../../Contexts/WishlistContext";
+import { useAuth } from "../../Contexts/AuthContex";
 export const Header = ()=>{
+    const {cartItem} = useCart();
+    const {wishlistItem} = useWishlist();
+    const {authState} = useAuth();
     return(
         <>
         <nav>
@@ -12,12 +18,12 @@ export const Header = ()=>{
         <NavLink className="linkNav" to="/">Home</NavLink>
         
         <span style={{margin:"1rem"}}></span>
-        <NavLink className="linkNav" to="/wishlist">WishList</NavLink>
+        <NavLink className="linkNav" to="/wishlist">WishList({wishlistItem.length})</NavLink>
         <span style={{margin:"1rem"}}></span>
-        <NavLink className="linkNav" to="/cart">Cart</NavLink>
+        <NavLink className="linkNav" to="/cart">Cart({cartItem.length})</NavLink>
         
         <span style={{margin:"1rem"}}></span>
-        <NavLink className="linkNav" to="/login">Login</NavLink>
+        {authState?.isLoggedIn?<NavLink className="linkNav" to="/login">Logout</NavLink>:<NavLink className="linkNav" to="/login">Login</NavLink>}
         </div>
         </nav>
         </>

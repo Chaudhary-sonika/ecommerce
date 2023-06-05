@@ -50,3 +50,11 @@ align-items: start;
     padding: 1rem;
     border-radius: 0.5rem;
 }
+.priceCardMainDiv h2{
+    border-bottom: 1px solid gray;
+}
+.priceCardMRPDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

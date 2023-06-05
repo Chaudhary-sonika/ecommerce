@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useContext, useEffect, useReducer, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 
@@ -18,7 +18,7 @@ export const CartProvider =({children})=>{
                 headers: { authorization: token },
               });
             if(status===200){
-              console.log(data);
+            //   console.log(data);
               setCartItem(data?.cart);
             }
         } catch(e){

@@ -1,13 +1,13 @@
  import { useFilter } from "../../Contexts/filterContext";
 import "./Filter.css";
 export const Filter = ()=>{
-  // const CatFilter = [{Home Appliances:[]},]
+  // const CatFilter = [{HomeAppliances:[]},]
   const {filterDispatch, filterState} = useFilter();
     return(
         <div>
           <h2>Filters:</h2>
         <div className="HomeDiv">
-          <button>Clear</button>
+          <button onClick={()=>filterDispatch({type: "clearFilter"})}>Clear Filter</button>
           <div className="priceDiv">
             <h3>PRICE</h3>
             <label><input type="radio" name="sort" onChange={()=>filterDispatch({type:"filterByPrice", payload:"highToLow"})}/>High to Low</label>
