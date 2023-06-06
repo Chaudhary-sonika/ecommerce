@@ -15,6 +15,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SignUp } from "./pages/Login/SignUp";
 import { Checkout } from "./pages/Checkout/Checkout";
+import { Address } from "./pages/Checkout/Address";
+import { OrderSummary } from "./pages/Checkout/OrderSummery";
 
 function App() {
   return (
@@ -44,7 +46,16 @@ function App() {
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/products/:productId" element={<SingleProduct />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route
+          path="/checkout"
+          element={
+            <RequireAuth>
+              <Checkout />
+            </RequireAuth>
+          }
+        />
+        <Route path="/addresspage" element={<Address />} />
+        <Route path="/ordersummary" element={<OrderSummary />} />
       </Routes>
       <Footer />
     </div>

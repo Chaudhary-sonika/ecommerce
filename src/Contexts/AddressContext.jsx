@@ -3,17 +3,22 @@ import { useAuth } from "./AuthContex";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const addressReducer = (action, addressState)=>{
+const addressReducer = ( addressState, action)=>{
  switch (action.type) {
     case "getAddress":
-        return (addressState = action.payload);
+        return {...addressState, addressData:action.payload};
+
+     default:
+        return addressState;   
  }
 }
 
 const AddressContext = createContext(null);
 export const AddressProvider =({children})=>{
     const {authState} = useAuth();
+    // const [addressData, setAddressData] = useState([]);
     const resetAddress = {
+        _id: "",
         name: "",
         street: "",
         city: "",
@@ -23,18 +28,20 @@ export const AddressProvider =({children})=>{
         mobile: "",
       };
     const [addressInitialState, setAddressInitialState] = useState(resetAddress);
-  const [addressState, addressDispatch] = useReducer(addressReducer, []);
+  const [addressState, addressDispatch] = useReducer(addressReducer, {addressData: []});
   const fetchAddressData = async()=>{
         try{
             const {data, status} = await axios({
-                method: "GET",
-                url: "/api/user/addresses",
+                 method: "GET",
+                 url: "/api/user/addresses",
                  headers: { authorization: authState?.token },
             });
             if(status===200){
              addressDispatch({type:"getAddress", payload:data?.address})
-             console.log(data);
+            //  setAddressData(data?.address);
+            //  console.log(data);
             }
+            // console.log(data, status);
         }catch(e){
             console.error(e);
         }
@@ -87,12 +94,11 @@ export const AddressProvider =({children})=>{
           console.error(e);
         }
       };
-
-      useEffect(()=>{
-        
+    useEffect(()=>{
+       if(authState?.token){
         fetchAddressData();
-        
-      }, []);
+       } 
+      }, [authState?.token]);
 
     return(
         <AddressContext.Provider value={{addressState, addressDispatch, addAddress, removeAddress, editAddresss, addressInitialState, setAddressInitialState, resetAddress,}}>

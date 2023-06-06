@@ -37,3 +37,27 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.address_mainDiv{
+    display: flex;
+    flex-direction: column;
+    max-width: 15rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+}
+.address_mainDiv input{
+    margin-bottom: 0.5rem;
+}
+.address_mainDiv button{
+    margin-bottom: 0.5rem;
+}
+.orderSummaryDiv{
+    max-width: 15rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+}

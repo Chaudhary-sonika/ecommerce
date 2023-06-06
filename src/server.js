@@ -1,4 +1,11 @@
 import { Server, Model, RestSerializer } from "miragejs";
+
+import {
+  getAllAddressesHandler,
+  addNewAddressHandler,
+  removeAddressHandler,
+  editAddressHandler,
+} from "./backend/controllers/AddressController";
 import {
   loginHandler,
   signupHandler,
@@ -25,6 +32,7 @@ import {
 import { categories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
+import { v4 as uuid } from "uuid";
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -49,7 +57,23 @@ export function makeServer({ environment = "development" } = {}) {
       });
 
       users.forEach((item) =>
-        server.create("user", { ...item, cart: [], wishlist: [] })
+        server.create("user", {
+          ...item,
+          cart: [],
+          wishlist: [],
+          address: [
+            {
+              _id: uuid(),
+              name: "Adarsh Balika",
+              street: "N-13, MG Complex",
+              mobile: "9837724724",
+              city: "Mumbai",
+              state: "Maharashtra",
+              country: "India",
+              zipcode: "400703",
+            },
+          ],
+        })
       );
 
       categories.forEach((item) => server.create("category", { ...item }));
@@ -85,6 +109,11 @@ export function makeServer({ environment = "development" } = {}) {
         "/user/wishlist/:productId",
         removeItemFromWishlistHandler.bind(this)
       );
+      // address route (private)
+      this.get("/user/addresses", getAllAddressesHandler.bind(this));
+      this.post("/user/address", addNewAddressHandler.bind(this));
+      this.post("/user/address/:addressId", editAddressHandler.bind(this));
+      this.delete("/user/address/:addressId", removeAddressHandler.bind(this));
     },
   });
 }
