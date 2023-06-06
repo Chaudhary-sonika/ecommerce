@@ -6,7 +6,7 @@ import { useData } from "./contexts";
 const FilterContext = createContext(null);
 
 export const FilterProvider = ({children})=>{
-    const initialState = {  category: [], productByCategory: [], sort: "", rating: 1, price: 500,} 
+    const initialState = {  category: [], productByCategory: [], sort: "", search: "", rating: 1, price: 500,} 
     const [filterState, filterDispatch] = useReducer(FilterReducer, initialState);
 
     const {state:{AllProduct},} = useData();
@@ -17,6 +17,14 @@ export const FilterProvider = ({children})=>{
     }
     if(filterState?.productByCategory?.length>0){
         FinalData = FinalData.filter((item)=> filterState?.productByCategory.includes(item.category));
+    }
+    if(filterState?.search?.length > 0){
+        FinalData = FinalData.filter(
+            (data) =>
+              data.name.toLowerCase().includes(filterState.search.toLowerCase()) ||
+              data.category.toLowerCase().includes(filterState.search.toLowerCase()) || 
+              data.categoryName.toLowerCase().includes(filterState.search.toLowerCase())
+          );
     }
     if(filterState?.sort ==="highToLow"){
         FinalData=[...FinalData].sort((a,b)=>b.price - a.price)

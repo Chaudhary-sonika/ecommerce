@@ -13,7 +13,10 @@ export const FilterReducer = (filterState, action)=>{
        return {...filterState, sort:action.payload};
      
      case "priceRangeFilter":
-        return {...filterState, price:action.payload};  
+        return {...filterState, price:action.payload};
+        
+     case "filterBySearch":
+          return { ...filterState, search: action.payload };   
 
      case "ratingFilter":
         return {...filterState, rating:action.payload};   

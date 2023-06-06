@@ -4,7 +4,7 @@ import { PriceCard } from "./PriceCard";
 import "./Cart.css";
 export const Cart = () => {
   const { cartItem, QuantityInCart, RemoveFromCart } = useCart();
-  console.log(cartItem, "Cart");
+  // console.log(cartItem, "Cart");
   return (
     <>
       <h1>Items in your cart:</h1>
