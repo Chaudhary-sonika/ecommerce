@@ -7,9 +7,9 @@ This folder contains the Mock Backend created for E-Commerce App. It contains di
 1.  Home Page
 2.  Product Listing Page
 3.  Filters By
-    Price
-    Rating
-    Category
+    a. Price
+    b. Rating
+    c. Category
 
 4.  Search Product Functionality
 5.  Single Product Page
@@ -19,9 +19,9 @@ This folder contains the Mock Backend created for E-Commerce App. It contains di
 9.  Address Management
 10. Checkout Management
 11. Authentication
-    Sign Up
-    Log In
-    Log Out
+    a. Sign Up
+    b. Log In
+    c. Log Out
 
 12. Toast
 
