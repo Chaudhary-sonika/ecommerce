@@ -10,8 +10,8 @@ export const Filter = ()=>{
           <button onClick={()=>filterDispatch({type: "clearFilter"})}>Clear Filter</button>
           <div className="priceDiv">
             <h3>PRICE</h3>
-            <label><input type="radio" name="sort" onChange={()=>filterDispatch({type:"filterByPrice", payload:"highToLow"})}/>High to Low</label>
-            <label><input type="radio" name="sort" onChange={()=>filterDispatch({type:"filterByPrice", payload:"lowToHigh"})}/>Low to High  </label>
+            <label><input type="radio" name="sort" checked={filterState.sort === "highToLow"} onChange={()=>filterDispatch({type:"filterByPrice", payload:"highToLow"})}/>High to Low</label>
+            <label><input type="radio" name="sort" checked={filterState.sort === "lowToHigh"} onChange={()=>filterDispatch({type:"filterByPrice", payload:"lowToHigh"})}/>Low to High  </label>
           </div>
           <div>
             <h3>PRICE RANGE</h3>
@@ -19,22 +19,22 @@ export const Filter = ()=>{
           </div>
           <div className="categoryDiv">
             <h3>CATEGORIES</h3>
-            <label><input type="checkbox" onClick={()=>filterDispatch({type:"filterByCategory", payload:"AC"})}/>AC</label>
-            <label><input type="checkbox" onClick={()=>filterDispatch({type:"filterByCategory", payload:"Refrigerator"})}/>Refrigerator</label>
-            <label><input type="checkbox" onClick={()=>filterDispatch({type:"filterByCategory", payload:"Microwave"})}/>Microwave</label>
-            <label><input type="checkbox" onClick={()=>filterDispatch({type:"filterByCategory", payload:"Washing Machine"})}/>Washing Machine</label>
-            <label><input type="checkbox" onClick={()=>filterDispatch({type:"filterByCategory", payload:"LED/TV"})}/>LED/TV</label>
-            <label><input type="checkbox" onClick={()=>filterDispatch({type:"filterByCategory", payload:"Air Purifier"})}/>Air Purifier</label>
-            <label><input type="checkbox" onClick={()=>filterDispatch({type:"filterByCategory", payload:"Smart Watch"})}/>Smart Watch</label>
-            <label><input type="checkbox" onClick={()=>filterDispatch({type:"filterByCategory", payload:"Mobile"})}/>Mobile Phone</label>
-            <label><input type="checkbox" onClick={()=>filterDispatch({type:"filterByCategory", payload:"Laptop"})}/>Laptop</label>
-            <label><input type="checkbox" onClick={()=>filterDispatch({type:"filterByCategory", payload:"Headphone"})}/>Accessories</label>
+            <label><input type="checkbox" checked={filterState?.productByCategory.includes("AC")} onClick={()=>filterDispatch({type:"filterByCategory", payload:"AC"})}/>AC</label>
+            <label><input type="checkbox" checked={filterState?.productByCategory.includes("Refrigerator")} onClick={()=>filterDispatch({type:"filterByCategory", payload:"Refrigerator"})}/>Refrigerator</label>
+            <label><input type="checkbox" checked={filterState?.productByCategory.includes("Microwave")} onClick={()=>filterDispatch({type:"filterByCategory", payload:"Microwave"})}/>Microwave</label>
+            <label><input type="checkbox" checked={filterState?.productByCategory.includes("Washing Machine")} onClick={()=>filterDispatch({type:"filterByCategory", payload:"Washing Machine"})}/>Washing Machine</label>
+            <label><input type="checkbox" checked={filterState?.productByCategory.includes("LED/TV")} onClick={()=>filterDispatch({type:"filterByCategory", payload:"LED/TV"})}/>LED/TV</label>
+            <label><input type="checkbox" checked={filterState?.productByCategory.includes("Air Purifier")} onClick={()=>filterDispatch({type:"filterByCategory", payload:"Air Purifier"})}/>Air Purifier</label>
+            <label><input type="checkbox" checked={filterState?.productByCategory.includes("Smart Watch")} onClick={()=>filterDispatch({type:"filterByCategory", payload:"Smart Watch"})}/>Smart Watch</label>
+            <label><input type="checkbox" checked={filterState?.productByCategory.includes("Mobile")} onClick={()=>filterDispatch({type:"filterByCategory", payload:"Mobile"})}/>Mobile Phone</label>
+            <label><input type="checkbox" checked={filterState?.productByCategory.includes("Laptop")} onClick={()=>filterDispatch({type:"filterByCategory", payload:"Laptop"})}/>Laptop</label>
+            <label><input type="checkbox" checked={filterState?.productByCategory.includes("Headphone")} onClick={()=>filterDispatch({type:"filterByCategory", payload:"Headphone"})}/>Accessories</label>
           </div>
           <div className="ratingDiv">
             <h3>RATINGS</h3>
-            <label><input type="radio" onChange={()=>filterDispatch({type:"ratingFilter", payload:4})}/>4 Star & above</label>
-            <label><input type="radio" onChange={()=>filterDispatch({type:"ratingFilter", payload:3})}/>3 Star & above</label>
-            <label><input type="radio" onChange={()=>filterDispatch({type:"ratingFilter", payload:2})}/>2 Star & above</label>
+            <label><input type="radio" checked={filterState?.rating===4} onChange={()=>filterDispatch({type:"ratingFilter", payload:4})}/>4 Star & above</label>
+            <label><input type="radio" checked={filterState?.rating===3} onChange={()=>filterDispatch({type:"ratingFilter", payload:3})}/>3 Star & above</label>
+            <label><input type="radio" checked={filterState?.rating===2} onChange={()=>filterDispatch({type:"ratingFilter", payload:2})}/>2 Star & above</label>
           </div>
         </div>
     </div>
