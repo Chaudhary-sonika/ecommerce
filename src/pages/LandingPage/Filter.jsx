@@ -15,7 +15,14 @@ export const Filter = ()=>{
           </div>
           <div>
             <h3>PRICE RANGE</h3>
-            <input type="range" min="500" max="112000" value={filterState.price} onChange={(e)=>filterDispatch({type:"priceRangeFilter", payload:e.target.value})}/>
+            <input type="range" min="500" max="112000" value={filterState.price} list="numbers" onChange={(e)=>filterDispatch({type:"priceRangeFilter", payload:e.target.value})}/>
+            <datalist id="numbers">
+            <option value="500"></option>
+            
+            <option value="50000"></option>
+            
+            <option value="112000"></option>
+          </datalist>
           </div>
           <div className="categoryDiv">
             <h3>CATEGORIES</h3>
